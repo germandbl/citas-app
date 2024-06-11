@@ -1,7 +1,7 @@
 import 'package:citas_app/models/appointment.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class NotesService {
+class AppointmentsService {
   final appointmentsInstance =
       FirebaseFirestore.instance.collection('appointments');
 
