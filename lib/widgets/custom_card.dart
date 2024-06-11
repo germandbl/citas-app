@@ -17,18 +17,24 @@ class CustomCard extends StatelessWidget {
               children: [
                 Text(
                   appointment.hospital ?? '',
-                  style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                  style: const TextStyle(
+                      fontSize: 18, fontWeight: FontWeight.w500),
                 ),
               ],
             ),
             const SizedBox(height: 15),
             SizedBox(
                 height: 120,
-                child: Text((appointment.description != null)
-                    ? (appointment.description!.length > 200
-                        ? ('${appointment.description!.substring(0, 200)}...')
-                        : appointment.description!)
-                    : '')),
+                child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text((appointment.description != null)
+                          ? (appointment.description!.length > 200
+                              ? ('${appointment.description!.substring(0, 200)}...')
+                              : appointment.description!)
+                          : '')
+                    ])),
             const SizedBox(height: 15),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
