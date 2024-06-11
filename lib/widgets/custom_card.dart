@@ -12,6 +12,7 @@ class CustomCard extends StatelessWidget {
           child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               children: [
@@ -25,16 +26,11 @@ class CustomCard extends StatelessWidget {
             const SizedBox(height: 15),
             SizedBox(
                 height: 120,
-                child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text((appointment.description != null)
-                          ? (appointment.description!.length > 200
-                              ? ('${appointment.description!.substring(0, 200)}...')
-                              : appointment.description!)
-                          : '')
-                    ])),
+                child: Text((appointment.description != null)
+                    ? (appointment.description!.length > 200
+                        ? ('${appointment.description!.substring(0, 200)}...')
+                        : appointment.description!)
+                    : '')),
             const SizedBox(height: 15),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
