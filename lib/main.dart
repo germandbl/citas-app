@@ -20,7 +20,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => AppointmentsProvider()),
+        ChangeNotifierProvider(create: (_) => AppointmentsProvider()..getAppointments()),
       ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
