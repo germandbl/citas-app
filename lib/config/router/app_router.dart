@@ -1,3 +1,4 @@
+import 'package:citas_app/models/appointment.dart';
 import 'package:citas_app/screens/appointment_screen.dart';
 import 'package:citas_app/screens/create_appointment_screen.dart';
 import 'package:citas_app/screens/home_screen.dart';
@@ -24,6 +25,10 @@ final appRouter = GoRouter(routes: [
             builder: (context, state) => const CreateAppointmentScreen()),
         GoRoute(
             path: 'appointment',
-            builder: (context, state) => const AppointmentScreen())
+            name: 'appointment',
+            builder: (context, state) {
+              final Appointment appointment = state.extra as Appointment;
+              return AppointmentScreen(appointment: appointment);
+            })
       ])
 ]);

@@ -1,12 +1,16 @@
+import 'package:citas_app/providers/appointments_provider.dart';
 import 'package:citas_app/widgets/custom_card.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final appointmentsProvider = context.watch<AppointmentsProvider>();
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Mis citas'),
@@ -19,8 +23,9 @@ class HomeScreen extends StatelessWidget {
                   separatorBuilder: (context, index) => const SizedBox(
                         height: 15,
                       ),
-                  itemCount: 10,
-                  itemBuilder: (context, index) => const CustomCard()))
+                  itemCount: appointmentsProvider.appointments.length,
+                  itemBuilder: (context, index) => CustomCard(
+                      appointment: appointmentsProvider.appointments[index])))
         ]),
       ),
       floatingActionButton: FloatingActionButton(
