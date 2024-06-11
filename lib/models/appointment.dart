@@ -7,7 +7,7 @@ class Appointment {
   final String? doctor;
 
   Appointment(
-      {required this.appointmentId,
+      {this.appointmentId,
       required this.hospital,
       required this.patient,
       required this.description,
