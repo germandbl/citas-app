@@ -51,6 +51,24 @@ class _CreateAppointmentScreenState extends State<CreateAppointmentScreen> {
                 ),
                 const SizedBox(height: 20),
                 TextFormField(
+                  focusNode: hospitalFocusNode,
+                  controller: hospitalController,
+                  validator: (String? value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Por favor ingresa un paciente';
+                    } else {
+                      return null;
+                    }
+                  },
+                  decoration: InputDecoration(
+                      labelText: "Paciente...",
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12)),
+                      contentPadding:
+                          const EdgeInsets.symmetric(horizontal: 10)),
+                ),
+                const SizedBox(height: 20),
+                TextFormField(
                   focusNode: doctorFocusNode,
                   controller: doctorController,
                   validator: (String? value) {
