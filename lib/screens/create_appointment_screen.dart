@@ -10,10 +10,12 @@ class CreateAppointmentScreen extends StatefulWidget {
 
 class _CreateAppointmentScreenState extends State<CreateAppointmentScreen> {
   final FocusNode hospitalFocusNode = FocusNode();
+  final FocusNode patientFocusNode = FocusNode();
   final FocusNode doctorFocusNode = FocusNode();
   final FocusNode dateFocusNode = FocusNode();
   final FocusNode descriptionFocusNode = FocusNode();
   final TextEditingController hospitalController = TextEditingController();
+  final TextEditingController patientController = TextEditingController();
   final TextEditingController doctorController = TextEditingController();
   final TextEditingController dateController = TextEditingController();
   final TextEditingController descriptionController = TextEditingController();
@@ -51,8 +53,8 @@ class _CreateAppointmentScreenState extends State<CreateAppointmentScreen> {
                 ),
                 const SizedBox(height: 20),
                 TextFormField(
-                  focusNode: hospitalFocusNode,
-                  controller: hospitalController,
+                  focusNode: patientFocusNode,
+                  controller: patientController,
                   validator: (String? value) {
                     if (value == null || value.isEmpty) {
                       return 'Por favor ingresa un paciente';
