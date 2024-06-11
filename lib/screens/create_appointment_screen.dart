@@ -1,4 +1,8 @@
+import 'package:citas_app/models/appointment.dart';
+import 'package:citas_app/providers/appointments_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
 
 class CreateAppointmentScreen extends StatefulWidget {
   const CreateAppointmentScreen({super.key});
@@ -23,6 +27,7 @@ class _CreateAppointmentScreenState extends State<CreateAppointmentScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final appointmentsProvider = context.read<AppointmentsProvider>();
     return Scaffold(
       appBar: AppBar(
         title: const Text('Crear una cita'),
@@ -131,7 +136,15 @@ class _CreateAppointmentScreenState extends State<CreateAppointmentScreen> {
                   children: [
                     FilledButton(
                         onPressed: () {
-                          if (_formKey.currentState!.validate()) {}
+                          if (_formKey.currentState!.validate()) {
+                            appointmentsProvider.create(Appointment(
+                                hospital: hospitalController.text,
+                                description: descriptionController.text,
+                                patient: patientController.text,
+                                schedule: dateController.text,
+                                doctor: doctorController.text));
+                            context.pop();
+                          }
                         },
                         style: FilledButton.styleFrom(
                             shape: RoundedRectangleBorder(
