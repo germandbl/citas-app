@@ -116,7 +116,7 @@ class _CreateAppointmentScreenState extends State<CreateAppointmentScreen> {
                       return null;
                     }
                   },
-                  maxLines: 15,
+                  maxLines: 10,
                   decoration: InputDecoration(
                       alignLabelWithHint: true,
                       labelText: "Descripción de la cita...",
