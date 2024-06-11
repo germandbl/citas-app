@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:752102045577:android:120c25b9ff2d030c485358",
         "android_client_info": {
-          "package_name": "com.citas.app"
+          "package_name": "com.example.citas_app"
         }
       },
       "oauth_client": [],
