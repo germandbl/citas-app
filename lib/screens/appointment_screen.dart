@@ -160,6 +160,7 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(12))),
                         child: const Text('Guardar cambios')),
+                        SizedBox(width: 15),
                         FilledButton(
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
@@ -168,9 +169,10 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
                           }
                         },
                         style: FilledButton.styleFrom(
+                          backgroundColor: Theme.of(context).colorScheme.error,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(12))),
-                        child: const Text('Guardar cambios')),
+                        child: const Text('Eliminar')),
                   ],
                 )
               ],
